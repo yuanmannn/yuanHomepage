@@ -1,0 +1,54 @@
+﻿{{ define "main" }}
+<section
+  id="project"
+  class="section section--border-bottom rad-animation-group flex-grow-1"
+>
+  <div id="main-content">
+    <div class="row flex-column-reverse flex-md-row rad-fade-down">
+      <div class="col-12 col-md-3 mt-3 mt-sm-0">
+        {{ $baseLangSite := .Sites.Default }}
+        {{ $currentPageID := .Page.File.UniqueID }}
+        
+        {{ $projects := (where .Site.RegularPages.ByDate.Reverse "Type" "project") }}
+        {{ $projects = $projects | lang.Merge (where $baseLangSite.RegularPages.ByDate.Reverse "Type" "project") }}   
+        {{ range $projects }} 
+        <div class="project {{ if eq .Page.File.UniqueID $currentPageID }} selected {{ end }}" >
+          <a href="{{.Permalink | relURL}}">
+            {{ $img := resources.Get .Params.companyLogo }}
+            {{ with $img }}
+            {{ $imgWebp := $img.Resize (printf "%dx%d webp q75 Lanczos picture" $img.Width $img.Height) }}  
+            <div class="project__header  with-company-logo">
+              <img
+                src="{{ $imgWebp.RelPermalink }}"
+                alt="{{ .Params.company }} logo"
+                class="project__company-logo"
+                loading="lazy"
+              >
+              {{ else }}
+              <div class="project__header  no-company-logo">
+              {{ end }}
+              <div class="project__meta">
+                <div class="project__title">{{ .Params.projectTitle }}</div>
+                <div class="project__company">{{ .Params.duration }}</div>
+              </div>
+            </div>
+          </a>
+        </div>
+        {{ end }}
+      </div>
+      <div class="col-12 col-md-9 mt-9 mt-sm-0">
+        {{ if .Params.video }}
+          <div class="project-video mb-4">
+            <video controls width="100%">
+              <source src="{{ .Params.video }}" type="video/mp4">
+            </video>
+          </div>
+        {{ end }}
+
+        <h1>{{ .Params.title }}</h1>
+        {{ .Content | safeHTML }}
+      </div>
+    </div>
+  </div>
+</section>
+{{ end }}

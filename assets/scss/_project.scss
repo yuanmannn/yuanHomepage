@@ -1,0 +1,186 @@
+﻿.project__company {
+    color: $base-color;
+}
+
+/* enhanced contrast */
+@include color-mode(dark) {
+    .project__company {
+        color: $dark-primary;
+    }
+}
+
+.project__location {
+    font-weight: normal;
+}
+
+.project + .project {
+    padding-top: 4px;
+}
+
+body.home div.project {
+    padding-top: 50px;
+}
+
+.project a {
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    color: inherit;
+}
+
+.project.selected a,
+.project:hover a,
+.project:active a,
+.project a:hover,
+.project a:active {
+    display: block;
+    background-color: $base-color;
+}
+
+.project.selected a .project__company,
+.project:hover a .project__company,
+.project:active a .project__company,
+.project a:hover .project__company,
+.project a:active .project__company,
+.project.selected a .project__date,
+.project:hover a .project__date,
+.project:active a .project__date,
+.project a:hover .project__date,
+.project a:active .project__date {
+    color: white !important;
+}
+
+.all-project-container {
+    margin-top: 50px;
+}
+
+.project__title {
+    position: relative;
+    font-size: 20px;
+    font-weight: 600;
+    z-index: 2;
+}
+
+@media (min-width: 992px) {
+    .project__title {
+        font-size: 24px;
+    }
+}
+
+.project__company {
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.project {
+    &__header {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        margin-bottom: 1rem;
+    }
+
+    &__company-logo {
+        width: 48px;
+        height: 48px;
+        object-fit: contain;
+        border-radius: 4px;
+        flex-shrink: 0;
+    }
+
+    &__meta {
+        flex: 1;
+        min-width: 0;
+    }
+
+    &__date {
+        font-size: 1.2rem;
+    }
+
+    &__title {
+        font-weight: 600;
+        margin: 0.2rem 0;
+    }
+
+    &__company {
+        font-size: 0.95rem;
+    }
+}
+
+.project-card {
+    padding: 0rem;
+    border-radius: 8px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+    html[data-bs-theme="dark"] & {
+        background-color: #2d2d2d;
+        color: white;
+
+        .project__title,
+        .project__company,
+        .project__date,
+        .project__location {
+            color: white;
+        }
+    }
+}
+
+.project-company-logo {
+    object-fit: contain;
+}
+
+/* 项目视频样式 */
+.project-video {
+    margin-bottom: 2rem;
+
+    video {
+        width: 100%;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+}
+
+.project-listpage {
+    .project {
+        /* 移除可能影响列表样式的属性 */
+        a {
+            border-radius: 0;
+            background-color: transparent;
+            box-shadow: none;
+            transition: background-color 0.3s ease;
+
+            &:hover {
+                background-color: $base-color;
+                transform: none;
+                box-shadow: none;
+            }
+        }
+
+        & + .project {
+            margin-top: 0;
+        }
+    }
+}
+
+/* 首页保持卡片样式 */
+.project-homepage {
+    .project {
+        a {
+            border-radius: 8px;
+            background-color: #fff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+
+            &:hover {
+                background-color: $base-color;
+                transform: translateY(-2px);
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+            }
+
+            html[data-bs-theme="dark"] & {
+                background-color: #2d2d2d;
+            }
+        }
+    }
+}

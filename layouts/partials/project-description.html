@@ -1,0 +1,24 @@
+{{- $contextType := printf "%T" . -}}
+{{- $isShortcode := (eq $contextType "*hugolib.ShortcodeWithPage") -}}
+
+{{- /* Intro title/description */}}
+{{- $introTitle := "" -}}
+{{- $introDescription := "" -}}
+
+{{- if $isShortcode }}
+  {{/* Shortcode params */}}
+  {{- $introTitle = .Get "intro_title" | default false -}}
+  {{- $introDescription = .Get "intro_description" | default ( i18n "project_description" ) | safeHTML -}}
+{{ else }}
+  {{/* Fallback to the content of the markdown in /project/_index.md */}}
+  {{/* Base fields from content */}}
+  {{- $introTitle = .Title -}}
+  {{- $introDescription = .Content | safeHTML -}}
+{{ end }}
+
+<div class="container-project">
+  <div class="row">
+    <h2>{{ $introTitle }}</h2>
+    <div class="lead">{{ $introDescription }}</div>
+  </div>
+</div>

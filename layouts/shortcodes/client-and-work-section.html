@@ -1,1 +1,211 @@
-{{ partial "client-and-work.html" . }}
+{{/* Used for the Client&Works section in the homepage */}}
+{{/* If some content is missing/not displayed, check the images for the client/work */}}
+
+{{- $contextType := printf "%T" . -}}
+{{- $isShortcode := (eq $contextType "*hugolib.ShortcodeWithPage") -}}
+
+{{/* ---------------------------------------------------------------------------
+     SECTION TITLE
+     --------------------------------------------------------------------------- */}}
+{{- $sectionTitle := "" -}}
+{{- if $isShortcode -}}
+  {{- $sectionTitle = .Get "title" -}}
+{{- else -}}
+  {{- $sectionTitle = i18n "client_work_title" -}}
+{{- end -}}
+
+{{/* ---------------------------------------------------------------------------
+     CLIENTS
+     --------------------------------------------------------------------------- */}}
+{{- $clients := slice -}}
+{{- if not $isShortcode -}}
+  {{- $baseLangSite := .Sites.Default -}}
+  {{- $clients = (where .Site.RegularPages.ByDate.Reverse "Type" "client-work" | lang.Merge (where $baseLangSite.RegularPages.ByDate.Reverse "Type" "client-work") ) -}}
+{{- else -}}
+  {{- $clients = (where .Site.RegularPages.ByDate.Reverse "Type" "client-work") -}}
+{{- end -}}
+
+{{/* ---------------------------------------------------------------------------
+     PROJECT
+     --------------------------------------------------------------------------- */}}
+{{- $project := (where .Site.RegularPages.ByDate.Reverse "Type" "project") -}}
+
+{{/*
+  sectionId: Optional argument to override the default HTML id for this section. If not provided, the default id is used. */}}
+{{ $sectionId := "client-and-work-section" }}
+{{ with .Get "sectionId" }}
+  {{ $sectionId = . }}
+{{ end }}
+
+<section {{if $sectionId}} id="{{ $sectionId }}"{{end}} class="section section--border-bottom">
+  <div class="client-works-container">
+    <h2 class="rad-animation-group rad-fade-down">
+      {{ $sectionTitle }}
+    </h2>
+    <div class="row row--padded rad-animation-group rad-fade-down">
+      <div class="col-12">
+        <div class="clients">
+          {{ range $clients }}
+          <div class="clients__item">
+            {{/* 修改这里：移除链接，只显示图片 */}}
+            {{ partial "lazypicture" (dict "src" .Params.logo.src "scale" .Params.logo.scale "class" "portfolio-project img-responsive")}}
+          </div>
+          {{ end }}
+        </div>
+      </div>
+    </div>
+    {{/* Project - 保留可点击卡片跳转到详情页面 */}}
+    <div class="row row--padded rad-animation-group rad-fade-down">
+      {{ range $project }}
+      <div class="col-12 col-md-6 col-lg-4 mb-4">
+        <a href="{{ .RelPermalink }}" class="project-card-link">
+          <div class="project-card">
+            <div class="project-card-image">
+              {{ partial "lazypicture" (dict "src" .Params.image.src "scale" .Params.image.scale "class" "project-card-img")}}
+            </div>
+            <div class="project-card-content">
+              <h3 class="project-card-title">{{ .Title }}</h3>
+              <div class="project-card-description">
+                {{ .Description | default .Summary | truncate 120 }}
+              </div>
+            </div>
+          </div>
+        </a>
+      </div>
+      {{ end }}
+    </div>
+  </div>
+</section>
+
+<style>
+/* 客户部分样式调整 */
+.clients__item {
+  display: inline-block;
+  margin: 15px;
+  vertical-align: middle;
+  text-align: center;
+}
+
+.clients__item img {
+  max-width: 100%;
+  height: auto;
+  filter: grayscale(100%);
+  opacity: 0.7;
+  transition: all 0.3s ease;
+}
+
+.clients__item:hover img {
+  filter: grayscale(0%);
+  opacity: 1;
+  transform: scale(1.05);
+}
+
+/* 项目卡片样式 */
+.project-card-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  height: 100%;
+}
+
+.project-card-link:hover {
+  text-decoration: none;
+  color: inherit;
+}
+
+.project-card {
+  background: #fff;
+  border: 1px solid #e9ecef;
+  border-radius: 12px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  height: 100%;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+.project-card-link:hover .project-card {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+  border-color: #007bff;
+}
+
+.project-card-image {
+  overflow: hidden;
+  position: relative;
+}
+
+.project-card-img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.project-card-link:hover .project-card-img {
+  transform: scale(1.05);
+}
+
+.project-card-content {
+  padding: 1.5rem;
+}
+
+.project-card-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+  color: #212529;
+}
+
+.project-card-description {
+  color: #6c757d;
+  line-height: 1.5;
+  margin-bottom: 0;
+  font-size: 0.95rem;
+}
+
+/* 暗色模式支持 */
+[data-bs-theme="dark"] .project-card {
+  background: #2d3748;
+  border-color: #4a5568;
+  color: #e9ecef;
+}
+
+[data-bs-theme="dark"] .project-card-title {
+  color: #e9ecef;
+}
+
+[data-bs-theme="dark"] .project-card-description {
+  color: #a0aec0;
+}
+
+[data-bs-theme="dark"] .project-card-link:hover .project-card {
+  border-color: #6ea8fe;
+}
+
+[data-bs-theme="dark"] .clients__item img {
+  filter: grayscale(100%) brightness(0.8);
+}
+
+[data-bs-theme="dark"] .clients__item:hover img {
+  filter: grayscale(0%) brightness(1);
+}
+
+/* 响应式调整 */
+@media (max-width: 768px) {
+  .project-card-content {
+    padding: 1rem;
+  }
+  
+  .project-card-title {
+    font-size: 1.1rem;
+  }
+  
+  .project-card-img {
+    height: 180px;
+  }
+  
+  .clients__item {
+    margin: 10px;
+  }
+}
+</style>

@@ -26,84 +26,6 @@
 {{ end }}
 
 {{/*----------------------------------------------
-    FORM CONFIGURATION
-------------------------------------------------*/}}
-{{ $form_action := "" }}
-{{ $form_method := "" }}
-{{ if $isShortcode }}
-  {{ $form_action = .Get "form_action" | default .Site.Data.homepage.contact.form_action }}
-  {{ $form_method = .Get "form_method" | default .Site.Data.homepage.contact.form_method }}
-{{ else }}
-  {{ $form_action = .Site.Data.homepage.contact.form_action }}
-  {{ $form_method = .Site.Data.homepage.contact.form_method }}
-{{ end }}
-
-{{/*----------------------------------------------
-    FORM FIELD PLACEHOLDERS
-------------------------------------------------*/}}
-{{ $name_placeholder := "" }}
-{{ if $isShortcode }}
-  {{ $name_placeholder = .Get "contact_form_name" | default (.Get "name_placeholder") | default .Site.Data.homepage.contact.form_name_placeholder | default (i18n "contact_name_placeholder") }}
-{{ else }}
-  {{ $name_placeholder = .Site.Data.homepage.contact.form_name_placeholder | default (i18n "contact_name_placeholder") }}
-{{ end }}
-{{ $name_placeholder_attr := "" }}
-{{ if $name_placeholder }}
-  {{ $name_placeholder_attr = printf "placeholder=%q" $name_placeholder }}
-{{ end }}
-
-{{ $email_placeholder := "" }}
-{{ if $isShortcode }}
-  {{ $email_placeholder = .Get "contact_form_email" | default (.Get "email_placeholder") | default .Site.Data.homepage.contact.form_email_placeholder | default (i18n "contact_email_placeholder") }}
-{{ else }}
-  {{ $email_placeholder = .Site.Data.homepage.contact.form_email_placeholder | default (i18n "contact_email_placeholder") }}
-{{ end }}
-{{ $email_placeholder_attr := "" }}
-{{ if $email_placeholder }}
-  {{ $email_placeholder_attr = printf "placeholder=%q" $email_placeholder }}
-{{ end }}
-
-{{ $phone_placeholder := "" }}
-{{ if $isShortcode }}
-  {{ $phone_placeholder = .Get "contact_form_phone" | default (.Get "phone_placeholder") | default .Site.Data.homepage.contact.form_phone_placeholder | default (i18n "contact_phone_placeholder") }}
-{{ else }}
-  {{ $phone_placeholder = .Site.Data.homepage.contact.form_phone_placeholder | default (i18n "contact_phone_placeholder") }}
-{{ end }}
-{{ $phone_placeholder_attr := "" }}
-{{ if $phone_placeholder }}
-  {{ $phone_placeholder_attr = printf "placeholder=%q" $phone_placeholder }}
-{{ end }}
-
-{{ $message_placeholder := "" }}
-{{ if $isShortcode }}
-  {{ $message_placeholder = .Get "contact_form_message" | default (.Get "message_placeholder") | default .Site.Data.homepage.contact.form_message_placeholder | default (i18n "contact_message_placeholder") }}
-{{ else }}
-  {{ $message_placeholder = .Site.Data.homepage.contact.form_message_placeholder | default (i18n "contact_message_placeholder") }}
-{{ end }}
-{{ $message_placeholder_attr := "" }}
-{{ if $message_placeholder }}
-  {{ $message_placeholder_attr = printf "placeholder=%q" $message_placeholder }}
-{{ end }}
-
-{{/*----------------------------------------------
-    TEXTAREA ROWS
-------------------------------------------------*/}}
-{{ $message_rows := 2 }}
-{{ if $isShortcode }}
-  {{ $message_rows = .Get "contact_form_rows" | default (.Get "message_rows") | default 2 }}
-{{ end }}
-
-{{/*----------------------------------------------
-    BUTTON TEXT
-------------------------------------------------*/}}
-{{ $button_text := "" }}
-{{ if $isShortcode }}
-  {{ $button_text = .Get "contact_button" | default (.Get "button_text") | default .Site.Data.homepage.contact.button_text | default (i18n "contact_button_text") }}
-{{ else }}
-  {{ $button_text = .Site.Data.homepage.contact.button_text | default (i18n "contact_button_text") }}
-{{ end }}
-
-{{/*----------------------------------------------
     CONTACT INFORMATION FIELDS
 ------------------------------------------------*/}}
 {{ $phone := "" }}
@@ -144,50 +66,77 @@
             <h2>{{ $title }}</h2>
 
             <div class="row pt-2">
-                <div class="col-12 col-lg-7">
-                    <form action="{{ $form_action }}" method="{{ $form_method }}" class="contact__form">
-                        <div class="row">
-                            <div class="col-12 col-sm-6">
-                                <input type="text" name="full_name" class="form-control" {{ $name_placeholder_attr | safeHTMLAttr }}>
-                            </div>
-                            <div class="col-12 col-sm-6">
-                                <input type="email" name="email" class="form-control" {{ $email_placeholder_attr | safeHTMLAttr }}>
-                            </div>
-                        </div>
-                        <div class="row pt-4">
-                            <div class="col-12">
-                                <input type="tel" name="phone" class="form-control" {{ $phone_placeholder_attr | safeHTMLAttr }}>
-                            </div>
-                        </div>
-                        <div class="row pt-4">
-                            <div class="col-12">
-                                <textarea name="message" class="form-control" rows="{{ $message_rows }}" {{ $message_placeholder_attr | safeHTMLAttr }}></textarea>
-                            </div>
-                        </div>
-                        <div class="row pt-4">
-                            <div class="col-12">
-                                <button type="submit" class="btn btn-primary">{{ $button_text }}</button>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-                <div class="col-12 col-lg-5 contact__info">
+                <div class="col-12 col-lg-12 contact__info text-start"> <!-- 改为 text-start -->
                     {{ if $phone }}
-                    <h3>{{ $phone_heading }}</h3>
-                    <span>{{ $phone | safeHTML }}</span>
+                    <div class="contact-info-item mb-4">
+                        <h3 class="text-start">{{ $phone_heading }}</h3> <!-- 标题左对齐 -->
+                        <span class="text-start d-block">{{ $phone | safeHTML }}</span> <!-- 内容左对齐 -->
+                    </div>
                     {{ end }}
 
                     {{ if $email }}
-                    <h3>{{ $email_heading }}</h3>
-                    <span>{{ $email | safeHTML }}</span>
+                    <div class="contact-info-item mb-4">
+                        <h3 class="text-start">{{ $email_heading }}</h3>
+                        <span class="text-start d-block">{{ $email | safeHTML }}</span>
+                    </div>
                     {{ end }}
                     
                     {{ if $location }}
-                    <h3>{{ $location_heading }}</h3>
-                    <span>{{ $location | safeHTML }}</span>
+                    <div class="contact-info-item mb-4">
+                        <h3 class="text-start">{{ $location_heading }}</h3>
+                        <span class="text-start d-block">{{ $location | safeHTML }}</span>
+                    </div>
                     {{ end }}
                 </div>
             </div>
         </div>
     </div>
 </section>
+
+<style>
+/* 移除框样式 */
+.contact-info-item {
+  padding: 0; /* 移除内边距 */
+  background: transparent !important; /* 移除背景色 */
+  border: none !important; /* 移除边框 */
+  transition: none; /* 移除过渡效果 */
+}
+
+.contact-info-item:hover {
+  background: transparent !important;
+  transform: none;
+}
+
+/* 文字左对齐 */
+.contact__info {
+  text-align: left;
+}
+
+.contact-info-item h3 {
+  margin-bottom: 0.5rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #333;
+}
+
+.contact-info-item span {
+  font-size: 1rem;
+  color: #666;
+  line-height: 1.5;
+}
+
+/* 暗色模式支持 */
+[data-bs-theme="dark"] .contact-info-item h3 {
+  color: #e9ecef;
+}
+
+[data-bs-theme="dark"] .contact-info-item span {
+  color: #a0aec0;
+}
+
+/* 移除所有悬停效果 */
+.contact-info-item:hover {
+  background: transparent;
+  transform: none;
+}
+</style>

@@ -27,3 +27,6 @@ a {
     color: $link-hover-color;
   }
 }
+
+// 覆盖Bootstrap代码颜色
+$code-color: #478079 !default;

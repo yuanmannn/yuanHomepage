@@ -1,21 +1,43 @@
 <!-- Optimized lazy loading initialization -->
 <script>
-  window.addEventListener("load", function() {
-    if (typeof lozad !== 'undefined') {
-      try {
-        var observer = window.lozad(".lozad", {
-          rootMargin: window.innerHeight / 2 + "px 0px",
-          threshold: 0.01,
-          loaded: function(el) {
-            el.setAttribute('data-loaded', 'true');
-          }
-        });
-        observer.observe();
-      } catch(e) {
-        console.error('Lozad initialization error:', e);
-      }
-    }
-  });
+    window.addEventListener("load", function () {
+        if (typeof lozad !== 'undefined') {
+            try {
+                var observer = window.lozad(".lozad", {
+                    rootMargin: window.innerHeight / 2 + "px 0px",
+                    threshold: 0.01,
+                    loaded: function (el) {
+                        el.setAttribute('data-loaded', 'true');
+                    }
+                });
+                observer.observe();
+            } catch (e) {
+                console.error('Lozad initialization error:', e);
+            }
+        }
+
+        // Initialize carousel if present
+        var carouselElement = document.getElementById('showcaseCarousel');
+        if (carouselElement && typeof bootstrap !== 'undefined') {
+            try {
+                var carousel = new bootstrap.Carousel(carouselElement, {
+                    interval: parseInt(carouselElement.getAttribute('data-bs-interval')) || 5000,
+                    wrap: true,
+                    touch: true
+                });
+
+                // Pause carousel on hover
+                carouselElement.addEventListener('mouseenter', function () {
+                    carousel.pause();
+                });
+                carouselElement.addEventListener('mouseleave', function () {
+                    carousel.cycle();
+                });
+            } catch (e) {
+                console.error('Carousel initialization error:', e);
+            }
+        }
+    });
 </script>
 
 <!-- Non-critical scripts loaded with defer for better performance -->
@@ -33,11 +55,11 @@
 {{- $vercelAnalytics := .Site.Params.analytics.vercelAnalytics }}
 
 <script>
-  window.si = window.si || function () { (window.siq = window.siq || []).push(arguments); };
+    window.si = window.si || function () { (window.siq = window.siq || []).push(arguments); };
 </script>
 {{- if $vercelPageInsights }}
 <script defer src="/_vercel/speed-insights/script.js"></script>
 {{- end }}
-{{- if $vercelAnalytics }} 
+{{- if $vercelAnalytics }}
 <script defer src="/_vercel/insights/script.js"></script>
 {{- end }}

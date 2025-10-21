@@ -1,1 +1,34 @@
 /* You can customize theme styles here */
+
+
+/* 只调整联系我部分的高度 */
+.section--contact {
+  padding: 20rem; /* 增加整个部分的上下内边距来增加高度 */
+}
+
+.contact.w-100 {
+  min-height: 300px; /* 设置最小高度 */
+  padding: 2.5rem; /* 增加内边距来增加内容区域高度 */
+}
+
+.contact-info-item:last-child {
+  margin-bottom: 0;
+}
+
+
+/* 响应式调整 */
+@media (max-width: 768px) {
+  .contact.w-100 {
+    min-height: 250px;
+    padding: 2rem;
+  }
+  
+  .contact__info {
+    min-height: 180px;
+  }
+  
+  .contact-info-item {
+    margin-bottom: 1.5rem;
+  }
+}
+
