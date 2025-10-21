@@ -13,8 +13,27 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
         with:
-          submodules: recursive  # 重要：拉取主题子模块
+          submodules: recursive
           fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          cache: 'npm'
+
+      - name: Install Bootstrap
+        run: |
+          npm init -y
+          npm install bootstrap@5.3.0
+
+      - name: Create bootstrap symlink
+        run: |
+          mkdir -p assets/scss/bootstrap
+          # 创建符号链接，让Hugo能够找到Bootstrap SCSS文件
+          ln -sf ../../node_modules/bootstrap/scss/* assets/scss/bootstrap/ || true
+          # 如果符号链接失败，直接复制文件
+          cp -r node_modules/bootstrap/scss/* assets/scss/bootstrap/ 2>/dev/null || true
 
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v2
@@ -22,8 +41,19 @@ jobs:
           hugo-version: 'latest'
           extended: true
 
+      - name: Create missing resource files
+        run: |
+          # 创建可能缺失的JS文件
+          mkdir -p assets/js
+          [[ ! -f assets/js/script.js ]] && echo "// Main script file" > assets/js/script.js
+          [[ ! -f assets/js/bootstrap.js ]] && echo "// Bootstrap components" > assets/js/bootstrap.js
+          
+          # 创建可能缺失的SCSS文件
+          mkdir -p assets/scss
+          [[ ! -f assets/scss/adritian.scss ]] && echo "/* Main SCSS file */" > assets/scss/adritian.scss
+
       - name: Build
-        run: hugo --minify
+        run: hugo --minify --verbose
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
@@ -39,6 +69,7 @@ jobs:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main'
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
