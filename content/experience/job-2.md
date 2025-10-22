@@ -1,7 +1,7 @@
 ﻿---
 date: 2024-12-01T00:00:00+01:00
 draft: false
-title: "job2"
+title: ""
 jobTitle: "技术美术"
 company: "天津傲梦文化发展有限公司"
 duration: "2022.08-今"
