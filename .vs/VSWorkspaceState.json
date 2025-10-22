@@ -2,11 +2,11 @@
   "ExpandedNodes": [
     "",
     "\\content",
+    "\\content\\experience",
     "\\content\\home",
-    "\\content\\project",
     "\\layouts",
     "\\layouts\\project"
   ],
-  "SelectedNode": "\\hugo.toml",
+  "SelectedNode": "\\content\\experience\\job-3.md",
   "PreviewInSolutionExplorer": false
 }

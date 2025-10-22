@@ -3,6 +3,14 @@
   "WorkspaceRootPath": "C:\\Users\\yangy\\Documents\\GitHub\\yuanHomepage\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\yangy\\Documents\\GitHub\\yuanHomepage\\content\\experience\\job-3.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:content\\experience\\job-3.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\yangy\\Documents\\GitHub\\yuanHomepage\\content\\experience\\job-2.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:content\\experience\\job-2.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\yangy\\Documents\\GitHub\\yuanHomepage\\content\\home\\home.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:content\\home\\home.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}"
     },
@@ -71,6 +79,32 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "job-3.md",
+              "DocumentMoniker": "C:\\Users\\yangy\\Documents\\GitHub\\yuanHomepage\\content\\experience\\job-3.md",
+              "RelativeDocumentMoniker": "content\\experience\\job-3.md",
+              "ToolTip": "C:\\Users\\yangy\\Documents\\GitHub\\yuanHomepage\\content\\experience\\job-3.md",
+              "RelativeToolTip": "content\\experience\\job-3.md",
+              "ViewState": "AgIAAAAAAAAAAAAAAADwvwMAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001818|",
+              "WhenOpened": "2025-10-22T06:38:45.379Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "job-2.md",
+              "DocumentMoniker": "C:\\Users\\yangy\\Documents\\GitHub\\yuanHomepage\\content\\experience\\job-2.md",
+              "RelativeDocumentMoniker": "content\\experience\\job-2.md",
+              "ToolTip": "C:\\Users\\yangy\\Documents\\GitHub\\yuanHomepage\\content\\experience\\job-2.md",
+              "RelativeToolTip": "content\\experience\\job-2.md",
+              "ViewState": "AgIAAAAAAAAAAAAAAADwvwMAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001818|",
+              "WhenOpened": "2025-10-22T06:38:23.028Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "home.md",
               "DocumentMoniker": "C:\\Users\\yangy\\Documents\\GitHub\\yuanHomepage\\content\\home\\home.md",
               "RelativeDocumentMoniker": "content\\home\\home.md",
@@ -83,7 +117,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
               "Title": "hugo.toml",
               "DocumentMoniker": "C:\\Users\\yangy\\Documents\\GitHub\\yuanHomepage\\hugo.toml",
               "RelativeDocumentMoniker": "hugo.toml",
@@ -91,12 +125,11 @@
               "RelativeToolTip": "hugo.toml",
               "ViewState": "AgIAAKgAAAAAAAAAAADwv7IAAAAdAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2025-10-22T06:28:36.31Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-22T06:28:36.31Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 4,
               "Title": "single.html",
               "DocumentMoniker": "C:\\Users\\yangy\\Documents\\GitHub\\yuanHomepage\\layouts\\project\\single.html",
               "RelativeDocumentMoniker": "layouts\\project\\single.html",
@@ -104,12 +137,11 @@
               "RelativeToolTip": "layouts\\project\\single.html",
               "ViewState": "AgIAADgAAAAAAAAAAAAAADgAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
-              "WhenOpened": "2025-10-22T06:03:52.778Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-22T06:03:52.778Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 6,
               "Title": "_index.md",
               "DocumentMoniker": "C:\\Users\\yangy\\Documents\\GitHub\\yuanHomepage\\content\\project\\_index.md",
               "RelativeDocumentMoniker": "content\\project\\_index.md",
@@ -121,7 +153,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 7,
               "Title": "jbdlg.md",
               "DocumentMoniker": "C:\\Users\\yangy\\Documents\\GitHub\\yuanHomepage\\content\\project\\jbdlg.md",
               "RelativeDocumentMoniker": "content\\project\\jbdlg.md",
@@ -133,7 +165,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 8,
               "Title": "igg.md",
               "DocumentMoniker": "C:\\Users\\yangy\\Documents\\GitHub\\yuanHomepage\\content\\project\\igg.md",
               "RelativeDocumentMoniker": "content\\project\\igg.md",
@@ -145,7 +177,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 9,
               "Title": "hyskn24.md",
               "DocumentMoniker": "C:\\Users\\yangy\\Documents\\GitHub\\yuanHomepage\\content\\project\\hyskn24.md",
               "RelativeDocumentMoniker": "content\\project\\hyskn24.md",
@@ -157,7 +189,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 10,
               "Title": "gGDEC.md",
               "DocumentMoniker": "C:\\Users\\yangy\\Documents\\GitHub\\yuanHomepage\\content\\project\\gGDEC.md",
               "RelativeDocumentMoniker": "content\\project\\gGDEC.md",
@@ -169,7 +201,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 11,
               "Title": "fWAIC.md",
               "DocumentMoniker": "C:\\Users\\yangy\\Documents\\GitHub\\yuanHomepage\\content\\project\\fWAIC.md",
               "RelativeDocumentMoniker": "content\\project\\fWAIC.md",
@@ -181,7 +213,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 12,
               "Title": "eca.md",
               "DocumentMoniker": "C:\\Users\\yangy\\Documents\\GitHub\\yuanHomepage\\content\\project\\eca.md",
               "RelativeDocumentMoniker": "content\\project\\eca.md",
@@ -193,7 +225,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 13,
               "Title": "dhn.md",
               "DocumentMoniker": "C:\\Users\\yangy\\Documents\\GitHub\\yuanHomepage\\content\\project\\dhn.md",
               "RelativeDocumentMoniker": "content\\project\\dhn.md",
@@ -205,7 +237,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 14,
               "Title": "cyskn23.md",
               "DocumentMoniker": "C:\\Users\\yangy\\Documents\\GitHub\\yuanHomepage\\content\\project\\cyskn23.md",
               "RelativeDocumentMoniker": "content\\project\\cyskn23.md",
@@ -217,7 +249,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 15,
               "Title": "bLenovo.md",
               "DocumentMoniker": "C:\\Users\\yangy\\Documents\\GitHub\\yuanHomepage\\content\\project\\bLenovo.md",
               "RelativeDocumentMoniker": "content\\project\\bLenovo.md",
@@ -229,7 +261,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 5,
               "Title": "aysqw.md",
               "DocumentMoniker": "C:\\Users\\yangy\\Documents\\GitHub\\yuanHomepage\\content\\project\\aysqw.md",
               "RelativeDocumentMoniker": "content\\project\\aysqw.md",

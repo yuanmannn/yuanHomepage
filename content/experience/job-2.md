@@ -1,7 +1,7 @@
 ﻿---
 date: 2023-12-01T00:00:00+01:00
 draft: false
-title: ""
+title: "job1"
 jobTitle: "技术美术"
 company: "天津戊峰科技发展有限公司"
 duration: "2022.03-2022.08"
