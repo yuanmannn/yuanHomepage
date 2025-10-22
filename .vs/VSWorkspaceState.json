@@ -2,10 +2,11 @@
   "ExpandedNodes": [
     "",
     "\\content",
+    "\\content\\home",
     "\\content\\project",
     "\\layouts",
     "\\layouts\\project"
   ],
-  "SelectedNode": "\\layouts\\project\\single.html",
+  "SelectedNode": "\\hugo.toml",
   "PreviewInSolutionExplorer": false
 }
