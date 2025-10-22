@@ -62,19 +62,24 @@ jobs:
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v2
         with:
-          hugo-version: 'latest'
+          hugo-version: '0.151.2'  # 指定一个已知的稳定版本
           extended: true
+
+      - name: Check Hugo version
+        run: hugo version
 
       - name: Build with Hugo
         run: |
-          # 尝试构建，即使有警告也继续
-          hugo --minify --verbose || true
+          # 使用正确的 Hugo 标志
+          hugo --minify --logLevel info
+          
           # 检查是否生成了 public 目录
-          if [ -d "public" ]; then
+          if [ -d "public" ] && [ "$(ls -A public)" ]; then
             echo "✓ Hugo build completed successfully"
-            ls -la public/ | head -10
+            echo "Generated files:"
+            find public/ -type f | head -10
           else
-            echo "❌ Hugo build failed - no public directory created"
+            echo "❌ Hugo build failed - no public directory created or it's empty"
             exit 1
           fi
 
