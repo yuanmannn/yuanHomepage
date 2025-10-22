@@ -3,7 +3,7 @@ date: '2024-08-25T09:53:42+02:00'
 title: ''
 draft: false
 description: '2022年中央广播电视总台中秋晚会 · 节目《这一生关于你的风景》、《银河中的星星》'
-video: "/videos/ysqw.mp4"
+video: "videos/ysqw.mp4"
 
 params:
     image:
