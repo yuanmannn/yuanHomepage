@@ -3,7 +3,7 @@ date: '2024-08-25T09:53:42+02:00'
 title: ''
 draft: false
 description: '2022联想创新科技大会'
-video: "/videos/Lenovo.mp4"
+video: "videos/Lenovo.mp4"
 
 params:
     image:

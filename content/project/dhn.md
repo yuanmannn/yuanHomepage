@@ -3,7 +3,7 @@ date: '2024-08-25T09:53:42+02:00' # date in which the content is created - defau
 title: ''
 draft: false # set to "true" if you want to hide the content 
 description: '2023河南春节晚会 · 先导片'
-video: "/videos/hn.mp4"
+video: "videos/hn.mp4"
 
 params:
     image:

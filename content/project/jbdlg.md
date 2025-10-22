@@ -3,7 +3,7 @@ date: '2024-08-25T09:53:42+02:00' # date in which the content is created - defau
 title: ''
 draft: false # set to "true" if you want to hide the content 
 description: '纪录片《布达拉宫·时空解码》'
-video: "/videos/bdlg.mp4"
+video: "videos/bdlg.mp4"
 
 params:
     image:

@@ -3,7 +3,7 @@ date: '2024-08-25T09:53:42+02:00'
 title: ''
 draft: false
 description: '启航2023——中央广播电视总台跨年晚会 · 节目《山海万里》'
-video: "/videos/yskn23.mp4"
+video: "videos/yskn23.mp4"
 
 params:
     image:

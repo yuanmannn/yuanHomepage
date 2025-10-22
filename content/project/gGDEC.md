@@ -3,7 +3,7 @@ date: '2024-08-25T09:53:42+02:00'
 title: ''
 draft: false
 description: '2023全球数字经济大会北京AR秀 · 首钢园AR秀、前门AR秀'
-video: "/videos/GDEC.mp4"
+video: "videos/GDEC.mp4"
 
 params:
     image:

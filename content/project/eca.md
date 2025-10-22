@@ -3,7 +3,7 @@ date: '2024-08-25T09:53:42+02:00'
 title: ''
 draft: false
 description: '虚拟人全流程研发 · 可交互的智能虚拟人导游'
-video: "/videos/ca.mp4"
+video: "videos/ca.mp4"
 
 params:
     image:
