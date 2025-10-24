@@ -76,6 +76,18 @@ sections = [
   "contact",
   "newsletter",
 ]
+
+# 性能优化配置
+  [params.performance]
+    preloadCSS = true
+    asyncJS = true
+    deferNonCriticalJS = true
+    
+  # 字体优化
+  [params.fonts]
+    preconnect = ["https://fonts.googleapis.com", "https://fonts.gstatic.com"]
+    preload = true
+
 # If you want to display an image logo in the header, you can add it here
 # logo = '/img/hugo.svg'
 
@@ -266,8 +278,17 @@ showJobCard = true # Set to false to hide the job card
 
 [imaging]
   resampleFilter = "Lanczos"
-  quality = 85
+  quality = 75
   anchor = "Smart"
+
+  # 添加图片格式优化
+  [imaging.exif]
+    includeFields = ".*"
+    excludeFields = ".*"
+  
+  [imaging.uploads]
+    maxWidth = 1920
+    maxHeight = 1080
 
 [minify]
   disableCSS = false
