@@ -1,34 +1,76 @@
 /* You can customize theme styles here */
 
-
-/* 只调整联系我部分的高度 */
+/* 联系我部分的响应式高度调整 */
 .section--contact {
-  padding: 20rem; /* 增加整个部分的上下内边距来增加高度 */
+    padding: 10rem 2rem; /* 使用相对单位并添加水平内边距 */
 }
 
 .contact.w-100 {
-  min-height: 300px; /* 设置最小高度 */
-  padding: 2.5rem; /* 增加内边距来增加内容区域高度 */
+    min-height: 300px;
+    padding: 2.5rem;
+    box-sizing: border-box; /* 确保内边距包含在高度内 */
 }
 
 .contact-info-item:last-child {
-  margin-bottom: 0;
+    margin-bottom: 0;
 }
 
+/* 平板设备响应式调整 */
+@media (max-width: 1024px) {
+    .section--contact {
+        padding: 8rem 1.5rem;
+    }
 
-/* 响应式调整 */
+    .contact.w-100 {
+        min-height: 280px;
+        padding: 2rem;
+    }
+}
+
+/* 移动端响应式调整 */
 @media (max-width: 768px) {
-  .contact.w-100 {
-    min-height: 250px;
-    padding: 2rem;
-  }
-  
-  .contact__info {
-    min-height: 180px;
-  }
-  
-  .contact-info-item {
-    margin-bottom: 1.5rem;
-  }
+    .section--contact {
+        padding: 6rem 1rem; /* 移动端减少上下内边距 */
+    }
+
+    .contact.w-100 {
+        min-height: 250px;
+        padding: 1.5rem;
+    }
+
+    .contact__info {
+        min-height: 180px;
+    }
+
+    .contact-info-item {
+        margin-bottom: 1.5rem;
+    }
 }
 
+/* 小屏幕移动设备进一步优化 */
+@media (max-width: 480px) {
+    .section--contact {
+        padding: 4rem 0.5rem;
+    }
+
+    .contact.w-100 {
+        min-height: 220px;
+        padding: 1rem;
+    }
+
+    .contact-info-item {
+        margin-bottom: 1rem;
+    }
+}
+
+/* 大屏幕设备优化 */
+@media (min-width: 1440px) {
+    .section--contact {
+        padding: 12rem 3rem;
+    }
+
+    .contact.w-100 {
+        min-height: 350px;
+        padding: 3rem;
+    }
+}
