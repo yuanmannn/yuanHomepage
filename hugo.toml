@@ -51,6 +51,7 @@ target = "static"
 source = "node_modules/bootstrap/scss"
 target = "assets/scss/bootstrap"
 
+
 [[module.mounts]]
 source = "node_modules/bootstrap/dist/js"
 target = "assets/js/bootstrap"
