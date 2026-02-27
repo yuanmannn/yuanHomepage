@@ -11,7 +11,7 @@ draft = false
     imgSrc="images/showcase/me.png"
     imgScale="1"
     carouselEnabled="true"
-    carouselImages="img/showcase/shouYe1.png,img/showcase/shouYe2.png,img/showcase/shouYe3.png,img/showcase/shouYe4.png,img/showcase/shouYe5.png,img/showcase/shouYe6.png,img/showcase/shouYe7.png"
+    carouselImages="img/showcase/shouYe7.png,img/showcase/shouYe6.png,img/showcase/shouYe5.png,img/showcase/shouYe4.png,img/showcase/shouYe3.png,img/showcase/shouYe2.png,img/showcase/shouYe1.png"
     carouselInterval="5000"
  >}}
  <!-- -->
