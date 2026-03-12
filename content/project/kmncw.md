@@ -7,7 +7,7 @@ video: "videos/bdlg.mp4"
 
 params:
     image:
-        src: "images/works/bdlg.png"
+        src: "images/works/mncw.png"
         scale: 0.5
 
 projectTitle: "2026年中央广播电视总台春节联欢晚会"
@@ -20,7 +20,7 @@ duration: "2025.10-2026.02"
 ### 项目概述
 
 纪录片《布达拉宫·时空解码》创新运用XR虚拟拍摄技术，以真实游览路线为叙事脉络，带领观众沉浸式探访未开放殿宇，通过数字技术动态还原建筑1300年的演变历程，实现历史文献与视觉科技的深度融合。<br>
-节目视频地址：[《来晒秋》](https://www.bilibili.com/bangumi/play/ep3162275?spm_id_from=333.1387.upload.video_card.click)、[《制造未来》](https://www.bilibili.com/bangumi/play/ep3162268?spm_id_from=333.1387.upload.video_card.click)、[《春晖满梨园》](https://www.bilibili.com/bangumi/play/ep3162609?spm_id_from=333.1387.upload.video_card.click&from_spmid=666.25.episode.0)
+节目视频地址：[《制造未来》](https://www.bilibili.com/bangumi/play/ep3162268?spm_id_from=333.1387.upload.video_card.click)、[《来晒秋》](https://www.bilibili.com/bangumi/play/ep3162275?spm_id_from=333.1387.upload.video_card.click)、[《春晖满梨园》](https://www.bilibili.com/bangumi/play/ep3162609?spm_id_from=333.1387.upload.video_card.click&from_spmid=666.25.episode.0)
 
 ### 技术实现
 
