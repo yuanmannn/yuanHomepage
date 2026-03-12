@@ -2,11 +2,13 @@
   "ExpandedNodes": [
     "",
     "\\content",
+    "\\content\\client-work",
     "\\content\\experience",
     "\\content\\home",
+    "\\content\\project",
     "\\layouts",
     "\\layouts\\project"
   ],
-  "SelectedNode": "\\content\\experience\\job-3.md",
+  "SelectedNode": "\\content\\project\\kmncw.md",
   "PreviewInSolutionExplorer": false
 }
