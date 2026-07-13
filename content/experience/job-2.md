@@ -4,7 +4,7 @@ draft: false
 title: " "
 jobTitle: "技术美术"
 company: "天津傲梦文化发展有限公司"
-duration: "2022.08-今"
+duration: "2022.08-2026.05"
 
 ---
 
